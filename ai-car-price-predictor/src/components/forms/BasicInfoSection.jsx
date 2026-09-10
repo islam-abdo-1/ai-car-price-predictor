@@ -13,7 +13,7 @@ export function BasicInfoSection({ register, errors, watch, setValue, metadata, 
     label: m,
   }));
   const selectedModel = VEHICLE_MODELS[model] || VEHICLE_MODELS['default'];
-  const categoryOptions = metadata?.categories?.filter(c => selectedModel.category.includes(c)) || selectedModel.category.map(c => ({ value: c, label: c }));
+  const categoryOptions = (metadata?.categories || selectedModel.category).filter(c => selectedModel.category.includes(c)).map(c => ({ value: c, label: c }));
 
   return (
     <section aria-labelledby="basic-info-heading" className="animate-fade-in">

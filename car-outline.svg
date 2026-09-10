@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1024 1024"
+     width="1024"
+     height="1024"
+     role="img"
+     aria-labelledby="title desc">
+  <title id="title">Sports car outline</title>
+  <desc id="desc">A white side-profile outline of a sporty car on a transparent background.</desc>
+
+  <g fill="none"
+     stroke="#ffffff"
+     stroke-width="16"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+    <!-- Main roof, hood, trunk, and rear contour -->
+    <path d="M170 532
+             C202 507 239 483 281 477
+             C317 471 350 475 382 481
+             C414 440 465 416 520 414
+             C568 412 610 418 649 432
+             C681 444 704 453 731 457
+             C757 461 787 461 812 458
+             C828 456 842 454 852 456
+             C856 457 855 464 851 472
+             C845 482 842 489 847 498
+             C853 507 850 519 844 529
+             C839 538 832 551 825 565
+             C819 577 813 588 807 600"/>
+
+    <!-- Front nose and lower body line -->
+    <path d="M170 532
+             C166 541 170 549 178 554
+             C174 562 170 570 168 578
+             C166 584 172 589 181 590
+             L223 591"/>
+    <path d="M368 590
+             C425 586 488 579 546 572
+             C592 567 624 559 648 566
+             C659 570 668 580 678 593"/>
+
+    <!-- Front wheel arch -->
+    <path d="M214 590
+             C216 544 249 507 294 507
+             C339 507 366 541 367 584"/>
+
+    <!-- Rear wheel arch -->
+    <path d="M678 590
+             C682 541 712 505 756 505
+             C800 505 826 540 826 584"/>
+
+    <!-- Front bumper and headlamp accent -->
+    <path d="M171 532
+             C191 534 216 522 238 503
+             C246 496 255 491 265 488"/>
+    <path d="M181 590 C194 592 205 592 218 590"/>
+
+    <!-- Side window and windshield -->
+    <path d="M373 480
+             C401 453 437 435 479 430
+             C530 424 585 427 628 438
+             C646 443 650 450 636 461
+             C613 479 567 486 511 487
+             C461 489 416 486 383 488
+             C368 489 361 484 373 480 Z"/>
+
+    <!-- Door / shoulder sweep -->
+    <path d="M382 488
+             C421 491 475 490 523 484
+             C589 477 635 463 672 447"/>
+    <path d="M375 505
+             C431 507 487 500 542 489"/>
+
+    <!-- Lower side character line -->
+    <path d="M368 590
+             C430 584 505 578 557 568
+             C596 561 620 555 648 566"/>
+
+    <!-- Rear spoiler and tail detail -->
+    <path d="M732 458
+             C753 465 785 468 815 464
+             C829 462 841 459 852 456"/>
+    <path d="M823 568 C835 561 843 553 849 545"/>
+  </g>
+
+  <!-- Small wheel cutouts keep the line-art character of the reference. -->
+  <g fill="none"
+     stroke="#ffffff"
+     stroke-width="12"
+     stroke-linecap="round">
+    <path d="M241 580 C241 546 264 521 294 521 C324 521 347 546 347 580"/>
+    <path d="M704 580 C704 546 727 521 756 521 C786 521 810 546 810 580"/>
+  </g>
+</svg>

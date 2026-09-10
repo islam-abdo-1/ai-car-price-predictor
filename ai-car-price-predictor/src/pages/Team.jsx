@@ -55,7 +55,7 @@ const teamMembers = [
     role: 'ML Engineer',
     github: 'https://github.com/shaf3iiiii',
     linkedin: 'https://www.linkedin.com/in/mahmoud-elshafiy-a561272a2',
-    skills: [],
+    skills: ['Machine Learning', 'Full Stack'],
   },
   {
     name: 'Mosab Ahmed',
@@ -135,37 +135,30 @@ function TeamCard({ member, index }) {
     <div className="flip-card min-h-[400px] relative flex flex-col" style={{ animationDelay: `${index * 100}ms` }}>
       <div className={`flip-card-inner ${flipped ? 'flipped z-10' : ''}`} style={{ height: '100%' }}>
         
-        {/* Front Face */}
+        {/* Front Face - Original Design: Role + Social Links + "Show Skills" */}
         <div className="flip-card-front section-card flex flex-col h-full">
           {renderAvatar()}
           
           <h3 className="text-h3 font-semibold text-text-primary mb-1 text-center">{member.name}</h3>
           
-          {/* Skills displayed as tags on front face */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {member.skills.map((skill, i) => (
-              <span key={i} className="text-xs font-medium text-accent bg-bg-input/50 rounded px-2 py-1">
-                {skill}
-              </span>
-            ))}
-          </div>
+          <p className="text-body text-accent mb-4 text-center">{member.role}</p>
           
           {renderSocialLinks()}
           
           <div className="flex-1" />
           
-          {/* Border added around "Show Skills" button */}
           {renderFlipButton(() => setFlipped(true), ChevronRight, 'Show Skills')}
+          
+          {renderFooter()}
         </div>
 
-        {/* Back Face */}
+        {/* Back Face - Original Design: Skills List + "Hide Skills" */}
         <div className="flip-card-back section-card flex flex-col h-full">
           {renderAvatar()}
           
           <h3 className="text-h3 font-semibold text-text-primary mb-3 text-center">{member.name}</h3>
           
-          {/* Role displayed on back face */}
-          <p className="text-body text-accent mb-4 text-center">{member.role}</p>
+          {renderSkillsList()}
           
           {renderFlipButton(() => setFlipped(false), ChevronLeft, 'Hide Skills')}
           

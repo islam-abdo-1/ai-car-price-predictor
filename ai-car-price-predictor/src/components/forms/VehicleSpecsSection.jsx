@@ -9,9 +9,9 @@ export function VehicleSpecsSection({ register, errors, watch, setValue, metadat
 
   const selectedModel = VEHICLE_MODELS[model] || VEHICLE_MODELS['default'];
 
-  const fuelTypeOptions = (metadata?.fuelTypes || []).filter(f => selectedModel.fuelType.includes(f));
-  const gearboxOptions = (metadata?.gearboxTypes || []).filter(g => selectedModel.gearboxType.includes(g));
-  const driveWheelsOptions = (metadata?.driveWheels || []).filter(d => selectedModel.driveWheels.includes(d));
+  const fuelTypeOptions = (metadata?.fuelTypes || []).filter(f => selectedModel.fuelType.includes(f)).map(f => ({ value: f, label: f }));
+  const gearboxOptions = (metadata?.gearboxTypes || []).filter(g => selectedModel.gearboxType.includes(g)).map(g => ({ value: g, label: g }));
+  const driveWheelsOptions = (metadata?.driveWheels || []).filter(d => selectedModel.driveWheels.includes(d)).map(d => ({ value: d, label: d }));
 
   return (
     <section aria-labelledby="vehicle-specs-heading" className="animate-fade-in">
