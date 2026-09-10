@@ -2,6 +2,7 @@
 Training script that replicates TIPS.py exactly and serializes all models for deployment.
 """
 import os
+import gc
 import pandas as pd
 import numpy as np
 import joblib
@@ -115,10 +116,11 @@ results['Ridge Regression'] = {
     'RMSE': round(np.sqrt(mean_squared_error(y_test, ridge_preds)), 2),
     'MAE': round(mean_absolute_error(y_test, ridge_preds), 2)
 }
+gc.collect()
 
 # --- Random Forest ---
 print("Training Random Forest...")
-rf = RandomForestRegressor(n_estimators=100, max_depth=15, random_state=42, n_jobs=-1)
+rf = RandomForestRegressor(n_estimators=50, max_depth=10, random_state=42, n_jobs=-1)
 rf.fit(X_train_preprocessed, y_train)
 rf_preds = rf.predict(X_test_preprocessed)
 models['random_forest'] = rf
@@ -127,10 +129,11 @@ results['Random Forest'] = {
     'RMSE': round(np.sqrt(mean_squared_error(y_test, rf_preds)), 2),
     'MAE': round(mean_absolute_error(y_test, rf_preds), 2)
 }
+gc.collect()
 
 # --- Gradient Boosting ---
 print("Training Gradient Boosting...")
-gb = GradientBoostingRegressor(n_estimators=100, learning_rate=0.1, max_depth=6, random_state=42)
+gb = GradientBoostingRegressor(n_estimators=50, learning_rate=0.1, max_depth=4, random_state=42)
 gb.fit(X_train_preprocessed, y_train)
 gb_preds = gb.predict(X_test_preprocessed)
 models['gradient_boosting'] = gb
@@ -139,6 +142,7 @@ results['Gradient Boosting'] = {
     'RMSE': round(np.sqrt(mean_squared_error(y_test, gb_preds)), 2),
     'MAE': round(mean_absolute_error(y_test, gb_preds), 2)
 }
+gc.collect()
 
 # --- SVR (separate preprocessing as in TIPS.py Cell 10) ---
 print("Training SVR (using separate StandardScaler on numerical features only)...")
