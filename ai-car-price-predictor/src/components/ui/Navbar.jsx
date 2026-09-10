@@ -61,12 +61,12 @@ export function Navbar() {
       {mobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-40 bg-black/50 md:hidden"
+            className="fixed inset-0 z-[60] bg-black/50 md:hidden transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
           />
           <div
             id="mobile-menu"
-            className="fixed inset-y-0 right-0 z-50 w-full max-w-sm md:hidden bg-bg-card border-l border-border-primary shadow-card overflow-y-auto animate-slide-in-right"
+            className="fixed inset-y-0 right-0 z-[70] w-[280px] md:hidden bg-bg-card border-l border-border-primary shadow-card overflow-y-auto animate-slide-in-right"
           >
             <div className="p-6 space-y-4">
               <div className="flex items-center justify-between">
