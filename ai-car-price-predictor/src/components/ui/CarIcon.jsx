@@ -4,13 +4,11 @@ export function CarIcon({ className, ...props }) {
       className={className}
       viewBox="140 390 720 230"
       fill="none"
-      stroke="#ffffff"
-      strokeWidth="1.5"
+      stroke="currentColor"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      width={28}
-      height={28}
       {...props}
     >
       <path d="M170 532 C202 507 239 483 281 477 C317 471 350 475 382 481 C414 440 465 416 520 414 C568 412 610 418 649 432 C681 444 704 453 731 457 C757 461 787 461 812 458 C828 456 842 454 852 456 C856 457 855 464 851 472 C845 482 842 489 847 498 C853 507 850 519 844 529 C839 538 832 551 825 565 C819 577 813 588 807 600"/>

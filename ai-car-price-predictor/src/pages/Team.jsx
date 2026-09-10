@@ -28,6 +28,7 @@ const teamMembers = [
     github: 'https://github.com/Yusuf-Lotfy',
     linkedin: 'https://www.linkedin.com/in/yusuf-lotfy-b3022a2b1',
     skills: ['Communication & Computer Engineer'],
+    assigned_roles: ['Team Lead', 'Data Cleaning', 'Data Processing', 'Ridge Regression'],
   },
   {
     name: 'Lotfy El Shazly',
@@ -35,13 +36,15 @@ const teamMembers = [
     github: 'https://github.com/lotfynsr-creator',
     linkedin: 'https://www.linkedin.com/in/lotfynsr-el-shazly-5310213a0',
     skills: ['Machine Learning Engineer', 'Data Scientist'],
+    assigned_roles: ['Data Cleaning', 'Data Processing', 'Ridge Regression'],
   },
   {
     name: 'Islam Abdo',
     role: 'UI',
     github: 'https://github.com/islam-abdo-1',
     linkedin: 'https://www.linkedin.com/in/islam-abdo-15094139b',
-    skills: ['Full-Stack Developer', 'Machine Learning & AI Engineer'],
+    skills: ['Full-Stack Developer', 'Machine Learning & AI Engineer', 'Random Forest'],
+    assigned_roles: ['UI', 'Deployment', 'Data Cleaning', 'Random Forest'],
   },
   {
     name: 'Mohamed Hussein',
@@ -49,6 +52,7 @@ const teamMembers = [
     github: 'https://github.com/mohamedmhmh123456789-sys',
     linkedin: 'https://www.linkedin.com/in/mohamed-hussein-1b9b0b397',
     skills: ['Machine Learning Engineer'],
+    assigned_roles: ['Random Forest'],
   },
   {
     name: 'Mahmoud El Shafiy',
@@ -56,6 +60,7 @@ const teamMembers = [
     github: 'https://github.com/shaf3iiiii',
     linkedin: 'https://www.linkedin.com/in/mahmoud-elshafiy-a561272a2',
     skills: ['Machine Learning Engineer', 'Full-Stack Developer'],
+    assigned_roles: ['SVR (Support Vector Regression)'],
   },
   {
     name: 'Mosab Ahmed',
@@ -63,6 +68,7 @@ const teamMembers = [
     github: 'https://github.com/mosab06',
     linkedin: 'https://www.linkedin.com/in/mosab-ahmed-2023a3328',
     skills: ['Machine Learning'],
+    assigned_roles: ['Gradient Boosting'],
   },
 ];
 
@@ -97,6 +103,20 @@ function TeamCard({ member, index }) {
       >
         <LinkedInIcon className={ICON_SIZES.social.icon} />
       </a>
+    </div>
+  );
+
+  const renderAssignedRolesTags = () => (
+    <div className="flex flex-wrap gap-2 justify-center mb-4 px-4">
+      {member.assigned_roles.map((role, i) => (
+        <span
+          key={i}
+          className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-accent/10 text-accent border border-accent/20"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-accent" aria-hidden="true" />
+          {role}
+        </span>
+      ))}
     </div>
   );
 
@@ -135,13 +155,13 @@ function TeamCard({ member, index }) {
     <div className="flip-card min-h-[400px] relative flex flex-col" style={{ animationDelay: `${index * 100}ms` }}>
       <div className={`flip-card-inner ${flipped ? 'flipped z-10' : ''}`} style={{ height: '100%' }}>
         
-        {/* Front Face: Avatar + Name + Role + Social Links + "Show Skills" */}
+        {/* Front Face: Avatar + Name + Assigned Roles Tags + Social Links + "Show Skills" */}
         <div className="flip-card-front section-card flex flex-col h-full">
           {renderAvatar()}
           
           <h3 className="text-h3 font-semibold text-text-primary mb-1 text-center">{member.name}</h3>
           
-          <p className="text-body text-accent mb-4 text-center">{member.role}</p>
+          {renderAssignedRolesTags()}
           
           {renderSocialLinks()}
           

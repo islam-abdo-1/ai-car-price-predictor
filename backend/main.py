@@ -243,6 +243,19 @@ def predict_price(features: dict, model_name: str) -> float:
 # ==========================================
 # ENDPOINTS
 # ==========================================
+@app.get("/")
+async def root():
+    return {
+        "message": "AI Car Price Predictor API",
+        "version": "1.0.0",
+        "docs": "/docs",
+        "health": "/health",
+        "predict": "/predict",
+        "models": "/models/info",
+        "metrics": "/models/metrics",
+    }
+
+
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
     return HealthResponse(
