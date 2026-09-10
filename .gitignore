@@ -7,7 +7,7 @@ env/
 .pytest_cache/
 .coverage
 
-# Model artifacts
+# Model artifacts (root level only - backend ones needed for deployment)
 model_artifacts/
 
 # Environment variables

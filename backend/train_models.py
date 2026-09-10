@@ -1,6 +1,7 @@
 """
 Training script that replicates TIPS.py exactly and serializes all models for deployment.
 """
+import os
 import pandas as pd
 import numpy as np
 import joblib
@@ -18,7 +19,8 @@ from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 # 1. LOAD AND CLEAN DATA (Cells 1-6 from TIPS.py)
 # ==========================================
 print("Loading dataset...")
-df = pd.read_csv(r'C:\Users\islam\OneDrive\Desktop\NTI_UI\car_price.csv')
+SCRIPT_DIR = Path(__file__).parent
+df = pd.read_csv(SCRIPT_DIR / 'car_price.csv')
 
 print("Dataset Shape:", df.shape)
 
@@ -265,7 +267,7 @@ gearbox_mapping = {
 # ==========================================
 # 7. SAVE ALL ARTIFACTS
 # ==========================================
-output_dir = Path('model_artifacts')
+output_dir = SCRIPT_DIR / 'model_artifacts'
 output_dir.mkdir(parents=True, exist_ok=True)
 
 print(f"\nSaving artifacts to {output_dir}...")
