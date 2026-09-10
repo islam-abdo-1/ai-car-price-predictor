@@ -10,8 +10,8 @@ export const MODEL_OPTIONS = PREDICTION_MODELS.map(m => ({
   label: m.name,
 }));
 
-export const CURRENCY = 'USD';
-export const CURRENCY_SYMBOL = '$';
+export const CURRENCY = 'GBP';
+export const CURRENCY_SYMBOL = '£';
 
 export const FORM_SECTIONS = [
   { id: 'basic', title: 'Basic Information', description: 'Essential vehicle identification details' },

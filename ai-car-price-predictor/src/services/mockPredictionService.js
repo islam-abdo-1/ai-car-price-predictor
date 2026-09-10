@@ -98,7 +98,7 @@ export const mockPredictionService = {
     return {
       predicted_price,
       model: modelDisplayNames[formData.predictionModel] || formData.predictionModel,
-      currency: 'USD',
+      currency: 'GBP',
       timestamp: new Date().toISOString(),
       inputSummary: {
         manufacturer: formData.manufacturer,
