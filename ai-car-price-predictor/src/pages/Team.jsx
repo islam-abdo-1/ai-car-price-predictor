@@ -43,7 +43,7 @@ const teamMembers = [
     role: 'UI',
     github: 'https://github.com/islam-abdo-1',
     linkedin: 'https://www.linkedin.com/in/islam-abdo-15094139b',
-    skills: ['Full-Stack Developer', 'Machine Learning & AI Engineer', 'Random Forest'],
+    skills: ['Full-Stack Developer', 'Machine Learning & AI Engineer'],
     assigned_roles: ['UI | Deployment', 'Data Cleaning', 'Random Forest'],
   },
   {
@@ -67,7 +67,7 @@ const teamMembers = [
     role: 'Gradient Boosting',
     github: 'https://github.com/mosab06',
     linkedin: 'https://www.linkedin.com/in/mosab-ahmed-2023a3328',
-    skills: ['Machine Learning'],
+    skills: ['Machine Learning Engineer'],
     assigned_roles: ['Gradient Boosting'],
   },
 ];

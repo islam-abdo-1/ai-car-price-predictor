@@ -1,5 +1,12 @@
 # AI Car Price Predictor
 
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=flat-square&logo=tailwind-css)
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=flat-square&logo=fastapi)
+![Vercel](https://img.shields.io/badge/Vercel-Deployment-000000?style=flat-square&logo=vercel)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+
 A sophisticated Machine Learning application for vehicle price prediction built during the **NTI Summer Training Program 2026** (120 Hours Graduation Project).
 
 ## 🎯 Project Overview

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Combobox } from '@headlessui/react';
 import { ChevronDown, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
@@ -19,6 +19,7 @@ function SearchableSelect({
   emptyMessage = 'No options found',
 }) {
   const [query, setQuery] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef(null);
   const selectedOption = options.find(opt => (opt.value || opt.id || opt.name) === value);
 
@@ -39,6 +40,7 @@ function SearchableSelect({
   const handleSelect = (val) => {
     onChange(val);
     setQuery('');
+    setIsOpen(false);
     inputRef.current?.focus();
   };
 
@@ -46,11 +48,13 @@ function SearchableSelect({
     e.stopPropagation();
     onChange('');
     setQuery('');
+    setIsOpen(false);
     inputRef.current?.focus();
   };
 
   const handleKeyDown = (e) => {
     if (e.key === 'Escape') {
+      setIsOpen(false);
       inputRef.current?.blur();
     }
   };
@@ -58,6 +62,20 @@ function SearchableSelect({
   const displayValue = selectedOption
     ? (selectedOption.label || selectedOption.name || selectedOption[filterBy])
     : '';
+
+  // Determine which options to show: all options when open and no query, otherwise filtered
+  const displayOptions = isOpen && !query ? options : filteredOptions;
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (inputRef.current && !inputRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   return (
     <div className="w-full">
@@ -80,7 +98,8 @@ function SearchableSelect({
             displayValue={() => query || displayValue}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            onFocus={() => setQuery('')}
+            onFocus={() => { setQuery(''); setIsOpen(true); }}
+            onClick={() => { setQuery(''); setIsOpen(true); }}
             placeholder={placeholder}
             className={cn(
               'input-base w-full pr-12',
@@ -94,6 +113,7 @@ function SearchableSelect({
             aria-controls={`${inputId}-listbox`}
             role="combobox"
             aria-haspopup="listbox"
+            aria-expanded={isOpen}
           />
 
           <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5 pointer-events-none">
@@ -107,7 +127,7 @@ function SearchableSelect({
                 <X className="w-4 h-4" aria-hidden="true" />
               </button>
             )}
-            <ChevronDown className="w-5 h-5 text-text-secondary" aria-hidden="true" />
+            <ChevronDown className={cn('w-5 h-5 text-text-secondary transition-transform', isOpen && 'rotate-180')} aria-hidden="true" />
           </div>
 
           <Combobox.Options
@@ -118,13 +138,14 @@ function SearchableSelect({
             )}
             role="listbox"
             aria-label={label}
+            static={isOpen}
           >
-            {filteredOptions.length === 0 ? (
+            {displayOptions.length === 0 ? (
               <div className="px-4 py-6 text-center text-text-secondary text-body-sm">
                 {query ? emptyMessage : 'No options available'}
               </div>
             ) : (
-              filteredOptions.map((option) => (
+              displayOptions.map((option) => (
                 <Combobox.Option
                   key={option.value || option.id || option.name}
                   value={option.value || option.id || option.name}
