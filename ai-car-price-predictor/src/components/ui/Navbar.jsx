@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../../utils/cn';
-import { Menu, X, Car, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
+import { CarIcon } from './CarIcon';
 
 const navLinks = [
   { path: '/', label: 'Home' },
@@ -18,9 +19,9 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-bg-primary/95 backdrop-blur-sm border-b border-border-primary">
       <nav className="container-main flex items-center justify-between h-16" aria-label="Main navigation">
         <Link to="/" className="flex items-center gap-2 text-text-primary" aria-label="AI Car Price Predictor Home">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10">
-            <Car className="w-5 h-5 text-accent" aria-hidden="true" />
-          </div>
+<div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10">
+              <CarIcon className="w-5 h-5 text-accent" aria-hidden="true" />
+            </div>
           <span className="font-bold text-h3 hidden sm:block">AI Car Price Predictor</span>
         </Link>
 
@@ -71,7 +72,7 @@ export function Navbar() {
               <div className="flex items-center justify-between">
                 <Link to="/" className="flex items-center gap-2 text-text-primary" aria-label="AI Car Price Predictor Home">
                   <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10">
-                    <Car className="w-5 h-5 text-accent" aria-hidden="true" />
+                    <CarIcon className="w-5 h-5 text-accent" aria-hidden="true" />
                   </div>
                   <span className="font-bold text-h3">AI Car Price Predictor</span>
                 </Link>

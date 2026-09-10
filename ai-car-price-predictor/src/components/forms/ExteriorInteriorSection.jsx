@@ -1,11 +1,15 @@
 import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
 import { Toggle } from '../ui/Toggle';
+import { VEHICLE_MODELS } from '../../utils/constants';
 
 export function ExteriorInteriorSection({ register, errors, watch, setValue, metadata, metadataLoading }) {
   const leatherInterior = watch('leatherInterior');
+  const model = watch('model');
 
-  const doorsOptions = (metadata?.doors || []).map(d => ({ value: String(d), label: `${d} Doors` }));
+  const selectedModel = VEHICLE_MODELS[model] || VEHICLE_MODELS['default'];
+
+  const doorsOptions = (metadata?.doors || []).filter(d => selectedModel.doors.includes(d)).map(d => ({ value: String(d), label: `${d} Doors` }));
   const wheelOptions = (metadata?.wheels || []).map(w => ({ value: w, label: w }));
   const colorOptions = (metadata?.colors || []).map(c => ({ value: c, label: c }));
 

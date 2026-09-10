@@ -1,16 +1,19 @@
 import { SearchableSelect } from '../ui/SearchableSelect';
 import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
+import { VEHICLE_MODELS } from '../../utils/constants';
 
 export function BasicInfoSection({ register, errors, watch, setValue, metadata, metadataLoading }) {
   const manufacturer = watch('manufacturer');
+  const model = watch('model');
 
   const manufacturerOptions = metadata?.manufacturers?.map(m => ({ value: m.id, label: m.name })) || [];
   const modelOptions = (metadata?.models?.[manufacturer] || []).map(m => ({
     value: m.toLowerCase().replace(/\s+/g, '-'),
     label: m,
   }));
-  const categoryOptions = (metadata?.categories || []).map(c => ({ value: c, label: c }));
+  const selectedModel = VEHICLE_MODELS[model] || VEHICLE_MODELS['default'];
+  const categoryOptions = metadata?.categories?.filter(c => selectedModel.category.includes(c)) || selectedModel.category.map(c => ({ value: c, label: c }));
 
   return (
     <section aria-labelledby="basic-info-heading" className="animate-fade-in">

@@ -1,5 +1,6 @@
 import { SectionCard } from '../components/ui/SectionCard';
-import { Car, Sparkles, GraduationCap, BookOpen, Users, Calendar } from 'lucide-react';
+import { Sparkles, GraduationCap, BookOpen, Users, Calendar } from 'lucide-react';
+import { CarIcon } from '../components/ui/CarIcon';
 
 const projectInfo = {
   title: 'About the Project',
@@ -17,7 +18,7 @@ const projectInfo = {
       description: 'The project experiments with multiple regression algorithms including Random Forest, XGBoost, and CatBoost to predict car prices based on various vehicle features.',
     },
     {
-      icon: Car,
+      icon: CarIcon,
       title: 'Real-World Data',
       description: 'The models are trained on automotive datasets with features like manufacturer, model, year, mileage, engine specifications, and interior/exterior attributes.',
     },

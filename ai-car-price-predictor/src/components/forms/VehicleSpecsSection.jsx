@@ -1,13 +1,17 @@
 import { Input } from '../ui/Input';
 import { Select } from '../ui/Select';
 import { Toggle } from '../ui/Toggle';
+import { VEHICLE_MODELS } from '../../utils/constants';
 
 export function VehicleSpecsSection({ register, errors, watch, setValue, metadata, metadataLoading }) {
   const turbo = watch('turbo');
+  const model = watch('model');
 
-  const fuelTypeOptions = (metadata?.fuelTypes || []).map(f => ({ value: f, label: f }));
-  const gearboxOptions = (metadata?.gearboxTypes || []).map(g => ({ value: g, label: g }));
-  const driveWheelsOptions = (metadata?.driveWheels || []).map(d => ({ value: d, label: d }));
+  const selectedModel = VEHICLE_MODELS[model] || VEHICLE_MODELS['default'];
+
+  const fuelTypeOptions = (metadata?.fuelTypes || []).filter(f => selectedModel.fuelType.includes(f));
+  const gearboxOptions = (metadata?.gearboxTypes || []).filter(g => selectedModel.gearboxType.includes(g));
+  const driveWheelsOptions = (metadata?.driveWheels || []).filter(d => selectedModel.driveWheels.includes(d));
 
   return (
     <section aria-labelledby="vehicle-specs-heading" className="animate-fade-in">

@@ -1,7 +1,7 @@
 import { cn } from '../../utils/cn';
 import { formatPrice, getModelDisplayName } from '../../utils/formatters';
 import { Button } from './Button';
-import { RefreshCw, DollarSign, Cpu } from 'lucide-react';
+import { Banknote, RefreshCw, Cpu } from 'lucide-react';
 
 export function ResultCard({ 
   prediction, 
@@ -19,10 +19,10 @@ export function ResultCard({
         <div>
           <p className="text-body-sm text-text-secondary mb-1">Estimated Price</p>
           <div className="flex items-baseline gap-2">
-            <DollarSign className="w-8 h-8 text-accent flex-shrink-0" aria-hidden="true" />
+            <Banknote className="w-8 h-8 text-accent flex-shrink-0" aria-hidden="true" />
             <span className="text-display font-bold text-text-primary tabular-nums">
               {loading ? (
-                <span className="animate-pulse">$00,000</span>
+                <span className="animate-pulse">£00,000</span>
               ) : (
                 formatPrice(predicted_price)
               )}

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Car, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import { CarIcon } from './CarIcon';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,7 +12,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2 text-text-primary mb-4" aria-label="AI Car Price Predictor Home">
               <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10">
-                <Car className="w-5 h-5 text-accent" aria-hidden="true" />
+                <CarIcon className="w-5 h-5 text-accent" aria-hidden="true" />
               </div>
               <span className="font-bold text-h3">AI Car Price Predictor</span>
             </Link>

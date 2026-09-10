@@ -1,13 +1,14 @@
 import { PredictionForm } from '../components/forms/PredictionForm';
 import { SectionCard } from '../components/ui/SectionCard';
-import { Sparkles, Car, Cpu, Shield } from 'lucide-react';
+import { Sparkles, Cpu, Shield } from 'lucide-react';
+import { CarIcon } from '../components/ui/CarIcon';
 
 const features = [
-  {
-    icon: Car,
-    title: 'Comprehensive Vehicle Data',
-    description: 'Enter detailed specifications including manufacturer, model, year, mileage, engine, and interior features.',
-  },
+    {
+      icon: CarIcon,
+      title: 'Comprehensive Vehicle Data',
+      description: 'Enter detailed specifications including manufacturer, model, year, mileage, engine, and interior features.',
+    },
   {
     icon: Cpu,
     title: 'Multiple ML Models',

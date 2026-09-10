@@ -80,6 +80,7 @@ function SearchableSelect({
             displayValue={() => query || displayValue}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
+            onFocus={() => setQuery('')}
             placeholder={placeholder}
             className={cn(
               'input-base w-full pr-12',

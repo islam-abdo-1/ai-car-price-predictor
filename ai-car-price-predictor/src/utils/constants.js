@@ -5,6 +5,44 @@ export const PREDICTION_MODELS = [
   { id: 'svr', name: 'SVR', description: 'Support Vector Regression for non-linear patterns' },
 ];
 
+export const VEHICLE_MODELS = {
+  'Honda Insight': {
+    category: ['Hatchback'],
+    gearboxType: ['CVT', 'Automatic'],
+    fuelType: ['Hybrid'],
+    driveWheels: ['FWD'],
+    doors: [4],
+  },
+  'Toyota Prius': {
+    category: ['Hatchback', 'Sedan'],
+    gearboxType: ['CVT', 'Automatic'],
+    fuelType: ['Hybrid'],
+    driveWheels: ['FWD'],
+    doors: [4, 5],
+  },
+  'Toyota Camry': {
+    category: ['Sedan'],
+    gearboxType: ['Automatic'],
+    fuelType: ['Hybrid', 'Gasoline'],
+    driveWheels: ['FWD'],
+    doors: [4],
+  },
+  'Ford Focus': {
+    category: ['Hatchback', 'Sedan'],
+    gearboxType: ['Manual', 'Automatic'],
+    fuelType: ['Gasoline', 'Electric'],
+    driveWheels: ['FWD'],
+    doors: [4, 5],
+  },
+  'default': {
+    category: ['Sedan', 'Hatchback', 'SUV'],
+    gearboxType: ['Manual', 'Automatic'],
+    fuelType: ['Gasoline', 'Diesel', 'Hybrid', 'Electric'],
+    driveWheels: ['FWD', 'RWD', 'AWD'],
+    doors: [2, 4, 5],
+  },
+};
+
 export const MODEL_OPTIONS = PREDICTION_MODELS.map(m => ({
   value: m.id,
   label: m.name,

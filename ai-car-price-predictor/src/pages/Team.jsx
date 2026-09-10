@@ -27,42 +27,42 @@ const teamMembers = [
     role: 'Team Lead',
     github: 'https://github.com/Yusuf-Lotfy',
     linkedin: 'https://www.linkedin.com/in/yusuf-lotfy-b3022a2b1',
-    skills: ['Data Cleaning', 'Data Processing', 'Ridge Regression'],
+    skills: ['Data Cleaning', 'Data Processing'],
   },
   {
     name: 'Lotfy El Shazly',
     role: 'ML Engineer / Data Scientist',
     github: 'https://github.com/lotfynsr-creator',
     linkedin: 'https://www.linkedin.com/in/lotfynsr-el-shazly-5310213a0',
-    skills: ['Data Cleaning', 'Data Processing', 'Ridge Regression'],
+    skills: ['Data Cleaning', 'Data Processing'],
   },
   {
     name: 'Islam Abdo',
     role: 'Full-Stack Developer',
     github: 'https://github.com/islam-abdo-1',
     linkedin: 'https://www.linkedin.com/in/islam-abdo-15094139b',
-    skills: ['UI', 'Deployment', 'Random Forest'],
+    skills: ['UI', 'Deployment'],
   },
   {
     name: 'Mohamed Hussein',
     role: 'Frontend Developer / ML Engineer',
     github: 'https://github.com/mohamedmhmh123456789-sys',
     linkedin: 'https://www.linkedin.com/in/mohamed-hussein-1b9b0b397',
-    skills: ['UI', 'Deployment', 'Random Forest'],
+    skills: ['UI', 'Deployment'],
   },
   {
     name: 'Mahmoud El Shafiy',
     role: 'ML Engineer',
     github: 'https://github.com/shaf3iiiii',
     linkedin: 'https://www.linkedin.com/in/mahmoud-elshafiy-a561272a2',
-    skills: ['SVR'],
+    skills: [],
   },
   {
     name: 'Mosab Ahmed',
     role: 'ML Engineer',
     github: 'https://github.com/mosab06',
     linkedin: 'https://www.linkedin.com/in/mosab-ahmed-2023a3328',
-    skills: ['Gradient Boosting'],
+    skills: [],
   },
 ];
 
@@ -140,15 +140,22 @@ function TeamCard({ member, index }) {
           {renderAvatar()}
           
           <h3 className="text-h3 font-semibold text-text-primary mb-1 text-center">{member.name}</h3>
-          <p className="text-body text-accent mb-4 text-center">{member.role}</p>
+          
+          {/* Skills displayed as tags on front face */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {member.skills.map((skill, i) => (
+              <span key={i} className="text-xs font-medium text-accent bg-bg-input/50 rounded px-2 py-1">
+                {skill}
+              </span>
+            ))}
+          </div>
           
           {renderSocialLinks()}
           
           <div className="flex-1" />
           
+          {/* Border added around "Show Skills" button */}
           {renderFlipButton(() => setFlipped(true), ChevronRight, 'Show Skills')}
-          
-          {renderFooter()}
         </div>
 
         {/* Back Face */}
@@ -157,7 +164,8 @@ function TeamCard({ member, index }) {
           
           <h3 className="text-h3 font-semibold text-text-primary mb-3 text-center">{member.name}</h3>
           
-          {renderSkillsList()}
+          {/* Role displayed on back face */}
+          <p className="text-body text-accent mb-4 text-center">{member.role}</p>
           
           {renderFlipButton(() => setFlipped(false), ChevronLeft, 'Hide Skills')}
           
