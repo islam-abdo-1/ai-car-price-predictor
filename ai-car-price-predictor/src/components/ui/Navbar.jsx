@@ -61,7 +61,7 @@ export function Navbar() {
       {mobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 z-[60] bg-black/50 md:hidden transition-opacity"
+            className="fixed inset-0 z-[60] bg-black/75 md:hidden transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
           />
           <div

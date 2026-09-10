@@ -44,7 +44,7 @@ const teamMembers = [
     github: 'https://github.com/islam-abdo-1',
     linkedin: 'https://www.linkedin.com/in/islam-abdo-15094139b',
     skills: ['Full-Stack Developer', 'Machine Learning & AI Engineer', 'Random Forest'],
-    assigned_roles: ['UI', 'Deployment', 'Data Cleaning', 'Random Forest'],
+    assigned_roles: ['UI | Deployment', 'Data Cleaning', 'Random Forest'],
   },
   {
     name: 'Mohamed Hussein',
@@ -152,7 +152,7 @@ function TeamCard({ member, index }) {
   );
 
   return (
-    <div className="flip-card min-h-[400px] relative flex flex-col" style={{ animationDelay: `${index * 100}ms` }}>
+    <div className="flip-card relative flex flex-col" style={{ animationDelay: `${index * 100}ms` }}>
       <div className={`flip-card-inner ${flipped ? 'flipped z-10' : ''}`} style={{ height: '100%' }}>
         
         {/* Front Face: Avatar + Name + Assigned Roles Tags + Social Links + "Show Skills" */}

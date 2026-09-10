@@ -5,7 +5,7 @@ export function CarIcon({ className, ...props }) {
       viewBox="140 390 720 230"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
