@@ -36,7 +36,7 @@ export function PredictionForm() {
       color: '',
       leatherInterior: false,
       airbags: '',
-      predictionModel: 'gradient-boosting',
+      predictionModel: 'gradient_boosting',
     },
     mode: 'onTouched',
   });

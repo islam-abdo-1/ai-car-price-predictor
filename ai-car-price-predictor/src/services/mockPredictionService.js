@@ -90,8 +90,8 @@ export const mockPredictionService = {
     const predicted_price = calculateMockPrice(formData);
     const modelDisplayNames = {
       'ridge': 'Ridge Regression',
-      'random-forest': 'Random Forest',
-      'gradient-boosting': 'Gradient Boosting',
+      'random_forest': 'Random Forest',
+      'gradient_boosting': 'Gradient Boosting',
       'svr': 'SVR',
     };
     

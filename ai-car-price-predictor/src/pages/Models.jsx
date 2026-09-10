@@ -24,7 +24,7 @@ const modelDetails = {
     ],
     useCases: 'Linear relationships, baseline models, when interpretability is key',
   },
-  'random-forest': {
+  'random_forest': {
     icon: TreePine,
     color: 'text-green-400',
     hex: '#4ade80',
@@ -44,7 +44,7 @@ const modelDetails = {
     ],
     useCases: 'Tabular data, mixed feature types, when feature importance is needed',
   },
-  'gradient-boosting': {
+  'gradient_boosting': {
     icon: Zap,
     color: 'text-yellow-400',
     hex: '#facc15',

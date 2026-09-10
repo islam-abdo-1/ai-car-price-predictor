@@ -1,7 +1,7 @@
 export const PREDICTION_MODELS = [
   { id: 'ridge', name: 'Ridge Regression', description: 'Regularized linear regression model' },
-  { id: 'random-forest', name: 'Random Forest', description: 'Ensemble learning method using multiple decision trees' },
-  { id: 'gradient-boosting', name: 'Gradient Boosting', description: 'Optimized gradient boosting framework' },
+  { id: 'random_forest', name: 'Random Forest', description: 'Ensemble learning method using multiple decision trees' },
+  { id: 'gradient_boosting', name: 'Gradient Boosting', description: 'Optimized gradient boosting framework' },
   { id: 'svr', name: 'SVR', description: 'Support Vector Regression for non-linear patterns' },
 ];
 
@@ -65,5 +65,5 @@ export const DEFAULT_FORM_VALUES = {
   color: '',
   leatherInterior: false,
   airbags: '',
-  predictionModel: 'gradient-boosting',
+  predictionModel: 'gradient_boosting',
 };

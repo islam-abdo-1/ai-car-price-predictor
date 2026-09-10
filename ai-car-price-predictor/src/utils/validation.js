@@ -17,7 +17,7 @@ export const predictionSchema = z.object({
   color: z.string().min(1, 'Color is required'),
   leatherInterior: z.boolean(),
   airbags: z.coerce.number().nonnegative('Airbags cannot be negative'),
-  predictionModel: z.enum(['ridge', 'random-forest', 'gradient-boosting', 'svr']),
+  predictionModel: z.enum(['ridge', 'random_forest', 'gradient_boosting', 'svr']),
 });
 
 /**

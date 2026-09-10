@@ -33,8 +33,8 @@ export function formatDate(dateString) {
 export function getModelDisplayName(modelId) {
   const models = {
     'ridge': 'Ridge Regression',
-    'random-forest': 'Random Forest',
-    'gradient-boosting': 'Gradient Boosting',
+    'random_forest': 'Random Forest',
+    'gradient_boosting': 'Gradient Boosting',
     'svr': 'SVR',
   };
   return models[modelId] || modelId;
