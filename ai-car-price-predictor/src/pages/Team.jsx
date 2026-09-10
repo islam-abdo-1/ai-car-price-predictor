@@ -27,42 +27,42 @@ const teamMembers = [
     role: 'Team Lead',
     github: 'https://github.com/Yusuf-Lotfy',
     linkedin: 'https://www.linkedin.com/in/yusuf-lotfy-b3022a2b1',
-    skills: ['Data Cleaning', 'Data Processing'],
+    skills: ['Communication & Computer Engineer'],
   },
   {
     name: 'Lotfy El Shazly',
-    role: 'ML Engineer / Data Scientist',
+    role: 'Data Cleaning',
     github: 'https://github.com/lotfynsr-creator',
     linkedin: 'https://www.linkedin.com/in/lotfynsr-el-shazly-5310213a0',
-    skills: ['Data Cleaning', 'Data Processing'],
+    skills: ['Machine Learning Engineer', 'Data Scientist'],
   },
   {
     name: 'Islam Abdo',
-    role: 'Full-Stack Developer',
+    role: 'UI',
     github: 'https://github.com/islam-abdo-1',
     linkedin: 'https://www.linkedin.com/in/islam-abdo-15094139b',
-    skills: ['UI', 'Deployment'],
+    skills: ['Full-Stack Developer', 'Machine Learning & AI Engineer'],
   },
   {
     name: 'Mohamed Hussein',
-    role: 'Frontend Developer / ML Engineer',
+    role: 'Random Forest',
     github: 'https://github.com/mohamedmhmh123456789-sys',
     linkedin: 'https://www.linkedin.com/in/mohamed-hussein-1b9b0b397',
-    skills: ['UI', 'Deployment'],
+    skills: ['Machine Learning Engineer'],
   },
   {
     name: 'Mahmoud El Shafiy',
-    role: 'ML Engineer',
+    role: 'SVR (Support Vector Regression)',
     github: 'https://github.com/shaf3iiiii',
     linkedin: 'https://www.linkedin.com/in/mahmoud-elshafiy-a561272a2',
-    skills: ['Machine Learning', 'Full Stack'],
+    skills: ['Machine Learning Engineer', 'Full-Stack Developer'],
   },
   {
     name: 'Mosab Ahmed',
-    role: 'ML Engineer',
+    role: 'Gradient Boosting',
     github: 'https://github.com/mosab06',
     linkedin: 'https://www.linkedin.com/in/mosab-ahmed-2023a3328',
-    skills: [],
+    skills: ['Machine Learning'],
   },
 ];
 
@@ -135,39 +135,32 @@ function TeamCard({ member, index }) {
     <div className="flip-card min-h-[400px] relative flex flex-col" style={{ animationDelay: `${index * 100}ms` }}>
       <div className={`flip-card-inner ${flipped ? 'flipped z-10' : ''}`} style={{ height: '100%' }}>
         
-        {/* Front Face: Avatar + Name + Skills (as tags) + Social Links + "Show Roles" */}
+        {/* Front Face: Avatar + Name + Role + Social Links + "Show Skills" */}
         <div className="flip-card-front section-card flex flex-col h-full">
           {renderAvatar()}
           
           <h3 className="text-h3 font-semibold text-text-primary mb-1 text-center">{member.name}</h3>
           
-          {/* Skills displayed as tags on front face */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {member.skills.map((skill, i) => (
-              <span key={i} className="text-xs font-medium text-accent bg-bg-input/50 rounded px-2 py-1">
-                {skill}
-              </span>
-            ))}
-          </div>
+          <p className="text-body text-accent mb-4 text-center">{member.role}</p>
           
           {renderSocialLinks()}
           
           <div className="flex-1" />
           
-          {renderFlipButton(() => setFlipped(true), ChevronRight, 'Show Roles')}
+          {renderFlipButton(() => setFlipped(true), ChevronRight, 'Show Skills')}
           
           {renderFooter()}
         </div>
 
-        {/* Back Face: Avatar + Name + Role + "Hide Roles" */}
+        {/* Back Face: Avatar + Name + Skills List + "Hide Skills" */}
         <div className="flip-card-back section-card flex flex-col h-full">
           {renderAvatar()}
           
           <h3 className="text-h3 font-semibold text-text-primary mb-3 text-center">{member.name}</h3>
           
-          <p className="text-body text-accent mb-4 text-center">{member.role}</p>
+          {renderSkillsList()}
           
-          {renderFlipButton(() => setFlipped(false), ChevronLeft, 'Hide Roles')}
+          {renderFlipButton(() => setFlipped(false), ChevronLeft, 'Hide Skills')}
           
           {renderFooter()}
         </div>
