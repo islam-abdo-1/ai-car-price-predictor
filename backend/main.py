@@ -5,6 +5,8 @@ Loads trained models and serves predictions via REST API
 import os
 import json
 import joblib
+import subprocess
+import sys
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -18,7 +20,25 @@ from pydantic import BaseModel, Field
 # ==========================================
 # CONFIGURATION
 # ==========================================
-ARTIFACTS_DIR = Path(__file__).parent / "model_artifacts"
+SCRIPT_DIR = Path(__file__).parent
+ARTIFACTS_DIR = SCRIPT_DIR / "model_artifacts"
+
+# ==========================================
+# TRAIN MODELS IF NOT EXISTS
+# ==========================================
+REQUIRED_FILES = [
+    "preprocessor.joblib", "ridge_model.joblib", "rf_model.joblib",
+    "gb_model.joblib", "svr_model.joblib", "svr_scaler.joblib",
+    "feature_info.json", "imputation_data.json", "mappings.json", "model_metrics.json",
+]
+
+if not ARTIFACTS_DIR.exists() or not all((ARTIFACTS_DIR / f).exists() for f in REQUIRED_FILES):
+    print("Model artifacts not found. Training models from scratch...")
+    subprocess.run(
+        [sys.executable, str(SCRIPT_DIR / "train_models.py")],
+        check=True, cwd=str(SCRIPT_DIR),
+    )
+    print("Training complete!")
 
 # ==========================================
 # LOAD ARTIFACTS AT STARTUP
