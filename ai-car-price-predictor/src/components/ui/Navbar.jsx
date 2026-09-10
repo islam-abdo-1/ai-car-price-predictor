@@ -20,7 +20,7 @@ export function Navbar() {
       <nav className="container-main flex items-center justify-between h-16" aria-label="Main navigation">
         <Link to="/" className="flex items-center gap-2 text-text-primary" aria-label="AI Car Price Predictor Home">
 <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10">
-              <CarIcon className="w-5 h-5 text-accent" aria-hidden="true" />
+              <CarIcon className="w-6 h-6 text-white" aria-hidden="true" />
             </div>
           <span className="font-bold text-h3 hidden sm:block">AI Car Price Predictor</span>
         </Link>
@@ -72,7 +72,7 @@ export function Navbar() {
               <div className="flex items-center justify-between">
                 <Link to="/" className="flex items-center gap-2 text-text-primary" aria-label="AI Car Price Predictor Home">
                   <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-accent/10">
-                    <CarIcon className="w-5 h-5 text-accent" aria-hidden="true" />
+                    <CarIcon className="w-6 h-6 text-white" aria-hidden="true" />
                   </div>
                   <span className="font-bold text-h3">AI Car Price Predictor</span>
                 </Link>

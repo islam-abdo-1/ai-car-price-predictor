@@ -135,32 +135,39 @@ function TeamCard({ member, index }) {
     <div className="flip-card min-h-[400px] relative flex flex-col" style={{ animationDelay: `${index * 100}ms` }}>
       <div className={`flip-card-inner ${flipped ? 'flipped z-10' : ''}`} style={{ height: '100%' }}>
         
-        {/* Front Face - Original Design: Role + Social Links + "Show Skills" */}
+        {/* Front Face: Avatar + Name + Skills (as tags) + Social Links + "Show Roles" */}
         <div className="flip-card-front section-card flex flex-col h-full">
           {renderAvatar()}
           
           <h3 className="text-h3 font-semibold text-text-primary mb-1 text-center">{member.name}</h3>
           
-          <p className="text-body text-accent mb-4 text-center">{member.role}</p>
+          {/* Skills displayed as tags on front face */}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {member.skills.map((skill, i) => (
+              <span key={i} className="text-xs font-medium text-accent bg-bg-input/50 rounded px-2 py-1">
+                {skill}
+              </span>
+            ))}
+          </div>
           
           {renderSocialLinks()}
           
           <div className="flex-1" />
           
-          {renderFlipButton(() => setFlipped(true), ChevronRight, 'Show Skills')}
+          {renderFlipButton(() => setFlipped(true), ChevronRight, 'Show Roles')}
           
           {renderFooter()}
         </div>
 
-        {/* Back Face - Original Design: Skills List + "Hide Skills" */}
+        {/* Back Face: Avatar + Name + Role + "Hide Roles" */}
         <div className="flip-card-back section-card flex flex-col h-full">
           {renderAvatar()}
           
           <h3 className="text-h3 font-semibold text-text-primary mb-3 text-center">{member.name}</h3>
           
-          {renderSkillsList()}
+          <p className="text-body text-accent mb-4 text-center">{member.role}</p>
           
-          {renderFlipButton(() => setFlipped(false), ChevronLeft, 'Hide Skills')}
+          {renderFlipButton(() => setFlipped(false), ChevronLeft, 'Hide Roles')}
           
           {renderFooter()}
         </div>

@@ -47,7 +47,7 @@ export function Home() {
         {features.map((feature, index) => (
           <SectionCard key={feature.title} className="text-center hover:border-accent/50 transition-colors" style={{ animationDelay: `${index * 100}ms` }}>
             <div className="flex items-center justify-center w-14 h-14 mx-auto mb-4 rounded-xl bg-accent/10">
-              <feature.icon className="w-7 h-7 text-accent" aria-hidden="true" />
+              <feature.icon className="w-8 h-8 text-white" aria-hidden="true" />
             </div>
             <h3 className="text-h3 font-semibold text-text-primary mb-2">{feature.title}</h3>
             <p className="text-body text-text-secondary">{feature.description}</p>

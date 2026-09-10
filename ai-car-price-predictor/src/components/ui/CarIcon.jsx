@@ -4,13 +4,13 @@ export function CarIcon({ className, ...props }) {
       className={className}
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
+      stroke="#ffffff"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      width={24}
-      height={24}
+      width={28}
+      height={28}
       {...props}
     >
       <g transform="scale(0.0234375)">
