@@ -1,0 +1,18 @@
+[project]
+name = "ai-car-price-predictor"
+version = "1.0.0"
+description = "AI Car Price Prediction API"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn>=0.27.0",
+    "pydantic>=2.5.3",
+    "pandas>=2.2.0",
+    "numpy>=1.26.4",
+    "scikit-learn>=1.4.0",
+    "joblib>=1.4.0",
+    "python-multipart>=0.0.6",
+]
+
+[tool.fastapi]
+entrypoint = "backend.main:app"
