@@ -1,0 +1,28 @@
+{
+  "manufacturer_mapping": {
+    "audi": "audi",
+    "bmw": "BMW",
+    "ford": "Ford",
+    "volkswagen": "vw",
+    "toyota": "toyota",
+    "skoda": "skoda",
+    "hyundai": "Hyundai"
+  },
+  "fuel_type_mapping": {
+    "Petrol": "Petrol",
+    "Diesel": "Diesel",
+    "Hybrid": "Hybrid",
+    "Plug-in Hybrid": "Hybrid",
+    "Electric": "Electric",
+    "CNG": "Other",
+    "LPG": "Other"
+  },
+  "gearbox_mapping": {
+    "Automatic": "Automatic",
+    "Manual": "Manual",
+    "CVT": "Automatic",
+    "DSG": "Automatic",
+    "Tiptronic": "Automatic",
+    "Semi-Automatic": "Semi-Auto"
+  }
+}

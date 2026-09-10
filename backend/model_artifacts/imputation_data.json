@@ -1,0 +1,388 @@
+{
+  "tax": {
+    "by_make_fuel_trans": {
+      "('Diesel', 'Automatic')": {
+        "BMW": 145.0,
+        "Ford": 145.0,
+        "Hyundai": 145.0,
+        "audi": 145.0,
+        "skoda": 145.0,
+        "toyota": 175.0,
+        "vw": 145.0
+      },
+      "('Diesel', 'Manual')": {
+        "BMW": 125.0,
+        "Ford": 145.0,
+        "Hyundai": 145.0,
+        "audi": 125.0,
+        "skoda": 145.0,
+        "toyota": 125.0,
+        "vw": 145.0
+      },
+      "('Diesel', 'Semi-Auto')": {
+        "BMW": 145.0,
+        "Ford": 145.0,
+        "Hyundai": 145.0,
+        "audi": 145.0,
+        "skoda": 145.0,
+        "toyota": 145.0,
+        "vw": 145.0
+      },
+      "('Electric', 'Automatic')": {
+        "BMW": 0.0,
+        "Ford": 0.0,
+        "Hyundai": NaN,
+        "audi": NaN,
+        "skoda": NaN,
+        "toyota": NaN,
+        "vw": NaN
+      },
+      "('Hybrid', 'Automatic')": {
+        "BMW": 135.0,
+        "Ford": 20.0,
+        "Hyundai": 135.0,
+        "audi": 0.0,
+        "skoda": 145.0,
+        "toyota": 20.0,
+        "vw": 135.0
+      },
+      "('Hybrid', 'Manual')": {
+        "BMW": 135.0,
+        "Ford": 20.0,
+        "Hyundai": 145.0,
+        "audi": 135.0,
+        "skoda": NaN,
+        "toyota": 20.0,
+        "vw": 67.5
+      },
+      "('Hybrid', 'Other')": {
+        "BMW": NaN,
+        "Ford": NaN,
+        "Hyundai": 0.0,
+        "audi": NaN,
+        "skoda": NaN,
+        "toyota": 0.0,
+        "vw": NaN
+      },
+      "('Hybrid', 'Semi-Auto')": {
+        "BMW": 135.0,
+        "Ford": 135.0,
+        "Hyundai": 145.0,
+        "audi": 67.5,
+        "skoda": 135.0,
+        "toyota": NaN,
+        "vw": 135.0
+      },
+      "('Other', 'Automatic')": {
+        "BMW": 0.0,
+        "Ford": 140.0,
+        "Hyundai": 140.0,
+        "audi": NaN,
+        "skoda": 145.0,
+        "toyota": 145.0,
+        "vw": 145.0
+      },
+      "('Other', 'Manual')": {
+        "BMW": 0.0,
+        "Ford": 0.0,
+        "Hyundai": NaN,
+        "audi": NaN,
+        "skoda": 82.5,
+        "toyota": 140.0,
+        "vw": 145.0
+      },
+      "('Other', 'Semi-Auto')": {
+        "BMW": NaN,
+        "Ford": 0.0,
+        "Hyundai": NaN,
+        "audi": NaN,
+        "skoda": NaN,
+        "toyota": NaN,
+        "vw": NaN
+      },
+      "('Petrol', 'Automatic')": {
+        "BMW": 145.0,
+        "Ford": 145.0,
+        "Hyundai": 147.5,
+        "audi": 145.0,
+        "skoda": 145.0,
+        "toyota": 145.0,
+        "vw": 145.0
+      },
+      "('Petrol', 'Manual')": {
+        "BMW": 145.0,
+        "Ford": 145.0,
+        "Hyundai": 145.0,
+        "audi": 145.0,
+        "skoda": 145.0,
+        "toyota": 145.0,
+        "vw": 145.0
+      },
+      "('Petrol', 'Other')": {
+        "BMW": NaN,
+        "Ford": NaN,
+        "Hyundai": 145.0,
+        "audi": NaN,
+        "skoda": 145.0,
+        "toyota": NaN,
+        "vw": NaN
+      },
+      "('Petrol', 'Semi-Auto')": {
+        "BMW": 145.0,
+        "Ford": 145.0,
+        "Hyundai": 145.0,
+        "audi": 145.0,
+        "skoda": 145.0,
+        "toyota": 145.0,
+        "vw": 145.0
+      }
+    },
+    "by_make_fuel": {
+      "('BMW', 'Diesel')": 145.0,
+      "('BMW', 'Electric')": 0.0,
+      "('BMW', 'Hybrid')": 135.0,
+      "('BMW', 'Other')": 0.0,
+      "('BMW', 'Petrol')": 145.0,
+      "('Ford', 'Diesel')": 145.0,
+      "('Ford', 'Electric')": 0.0,
+      "('Ford', 'Hybrid')": 135.0,
+      "('Ford', 'Other')": 135.0,
+      "('Ford', 'Petrol')": 145.0,
+      "('Hyundai', 'Diesel')": 145.0,
+      "('Hyundai', 'Hybrid')": 135.0,
+      "('Hyundai', 'Other')": 140.0,
+      "('Hyundai', 'Petrol')": 145.0,
+      "('audi', 'Diesel')": 145.0,
+      "('audi', 'Hybrid')": 0.0,
+      "('audi', 'Petrol')": 145.0,
+      "('skoda', 'Diesel')": 145.0,
+      "('skoda', 'Hybrid')": 135.0,
+      "('skoda', 'Other')": 145.0,
+      "('skoda', 'Petrol')": 145.0,
+      "('toyota', 'Diesel')": 145.0,
+      "('toyota', 'Hybrid')": 20.0,
+      "('toyota', 'Other')": 145.0,
+      "('toyota', 'Petrol')": 145.0,
+      "('vw', 'Diesel')": 145.0,
+      "('vw', 'Hybrid')": 135.0,
+      "('vw', 'Other')": 145.0,
+      "('vw', 'Petrol')": 145.0
+    },
+    "by_make": {
+      "BMW": 145.0,
+      "Ford": 145.0,
+      "Hyundai": 145.0,
+      "audi": 145.0,
+      "skoda": 145.0,
+      "toyota": 140.0,
+      "vw": 145.0
+    },
+    "by_fuel": {
+      "Diesel": 145.0,
+      "Electric": 0.0,
+      "Hybrid": 135.0,
+      "Other": 145.0,
+      "Petrol": 145.0
+    },
+    "by_trans": {
+      "Automatic": 145.0,
+      "Manual": 145.0,
+      "Other": 72.5,
+      "Semi-Auto": 145.0
+    },
+    "global": 145.0
+  },
+  "mpg": {
+    "by_make_fuel_trans": {
+      "('Diesel', 'Automatic')": {
+        "BMW": 55.4,
+        "Ford": 54.3,
+        "Hyundai": 42.8,
+        "audi": 47.9,
+        "skoda": 54.3,
+        "toyota": 36.2,
+        "vw": 49.6
+      },
+      "('Diesel', 'Manual')": {
+        "BMW": 62.8,
+        "Ford": 64.2,
+        "Hyundai": 61.7,
+        "audi": 61.4,
+        "skoda": 64.2,
+        "toyota": 60.1,
+        "vw": 58.9
+      },
+      "('Diesel', 'Semi-Auto')": {
+        "BMW": 55.4,
+        "Ford": 54.3,
+        "Hyundai": 55.4,
+        "audi": 50.4,
+        "skoda": 60.1,
+        "toyota": 30.1,
+        "vw": 49.6
+      },
+      "('Electric', 'Automatic')": {
+        "BMW": 85.14999999999999,
+        "Ford": 67.3,
+        "Hyundai": NaN,
+        "audi": NaN,
+        "skoda": NaN,
+        "toyota": NaN,
+        "vw": NaN
+      },
+      "('Hybrid', 'Automatic')": {
+        "BMW": 85.14999999999999,
+        "Ford": 74.3,
+        "Hyundai": 78.5,
+        "audi": 85.14999999999999,
+        "skoda": 85.14999999999999,
+        "toyota": 74.3,
+        "vw": 85.14999999999999
+      },
+      "('Hybrid', 'Manual')": {
+        "BMW": 85.14999999999999,
+        "Ford": 78.5,
+        "Hyundai": 51.4,
+        "audi": 85.14999999999999,
+        "skoda": NaN,
+        "toyota": 74.3,
+        "vw": 85.14999999999999
+      },
+      "('Hybrid', 'Other')": {
+        "BMW": NaN,
+        "Ford": NaN,
+        "Hyundai": 78.5,
+        "audi": NaN,
+        "skoda": NaN,
+        "toyota": 78.0,
+        "vw": NaN
+      },
+      "('Hybrid', 'Semi-Auto')": {
+        "BMW": 85.14999999999999,
+        "Ford": 85.14999999999999,
+        "Hyundai": 55.4,
+        "audi": 85.14999999999999,
+        "skoda": 85.14999999999999,
+        "toyota": NaN,
+        "vw": 55.4
+      },
+      "('Other', 'Automatic')": {
+        "BMW": 85.14999999999999,
+        "Ford": 67.15,
+        "Hyundai": 78.5,
+        "audi": NaN,
+        "skoda": 45.6,
+        "toyota": 67.0,
+        "vw": 45.6
+      },
+      "('Other', 'Manual')": {
+        "BMW": 85.14999999999999,
+        "Ford": 68.15,
+        "Hyundai": NaN,
+        "audi": NaN,
+        "skoda": 62.150000000000006,
+        "toyota": 68.9,
+        "vw": 48.7
+      },
+      "('Other', 'Semi-Auto')": {
+        "BMW": NaN,
+        "Ford": 85.14999999999999,
+        "Hyundai": NaN,
+        "audi": NaN,
+        "skoda": NaN,
+        "toyota": NaN,
+        "vw": NaN
+      },
+      "('Petrol', 'Automatic')": {
+        "BMW": 44.8,
+        "Ford": 45.6,
+        "Hyundai": 43.6,
+        "audi": 40.4,
+        "skoda": 44.8,
+        "toyota": 56.5,
+        "vw": 44.8
+      },
+      "('Petrol', 'Manual')": {
+        "BMW": 48.7,
+        "Ford": 57.7,
+        "Hyundai": 55.4,
+        "audi": 52.3,
+        "skoda": 57.7,
+        "toyota": 58.0,
+        "vw": 54.3
+      },
+      "('Petrol', 'Other')": {
+        "BMW": NaN,
+        "Ford": NaN,
+        "Hyundai": 39.8,
+        "audi": NaN,
+        "skoda": 47.1,
+        "toyota": NaN,
+        "vw": NaN
+      },
+      "('Petrol', 'Semi-Auto')": {
+        "BMW": 42.2,
+        "Ford": 47.9,
+        "Hyundai": 39.8,
+        "audi": 42.2,
+        "skoda": 51.4,
+        "toyota": 56.5,
+        "vw": 44.8
+      }
+    },
+    "by_make_fuel": {
+      "('BMW', 'Diesel')": 57.6,
+      "('BMW', 'Electric')": 85.14999999999999,
+      "('BMW', 'Hybrid')": 85.14999999999999,
+      "('BMW', 'Other')": 85.14999999999999,
+      "('BMW', 'Petrol')": 44.8,
+      "('Ford', 'Diesel')": 60.1,
+      "('Ford', 'Electric')": 67.3,
+      "('Ford', 'Hybrid')": 76.3,
+      "('Ford', 'Other')": 67.3,
+      "('Ford', 'Petrol')": 56.5,
+      "('Hyundai', 'Diesel')": 57.6,
+      "('Hyundai', 'Hybrid')": 78.5,
+      "('Hyundai', 'Other')": 78.5,
+      "('Hyundai', 'Petrol')": 52.3,
+      "('audi', 'Diesel')": 53.3,
+      "('audi', 'Hybrid')": 85.14999999999999,
+      "('audi', 'Petrol')": 47.1,
+      "('skoda', 'Diesel')": 62.8,
+      "('skoda', 'Hybrid')": 85.14999999999999,
+      "('skoda', 'Other')": 51.4,
+      "('skoda', 'Petrol')": 55.4,
+      "('toyota', 'Diesel')": 55.4,
+      "('toyota', 'Hybrid')": 74.3,
+      "('toyota', 'Other')": 67.0,
+      "('toyota', 'Petrol')": 58.0,
+      "('vw', 'Diesel')": 55.4,
+      "('vw', 'Hybrid')": 85.14999999999999,
+      "('vw', 'Other')": 47.9,
+      "('vw', 'Petrol')": 53.3
+    },
+    "by_make": {
+      "BMW": 53.3,
+      "Ford": 57.7,
+      "Hyundai": 55.4,
+      "audi": 50.4,
+      "skoda": 57.7,
+      "toyota": 60.1,
+      "vw": 53.3
+    },
+    "by_fuel": {
+      "Diesel": 57.6,
+      "Electric": 67.3,
+      "Hybrid": 76.3,
+      "Other": 64.2,
+      "Petrol": 54.3
+    },
+    "by_trans": {
+      "Automatic": 52.3,
+      "Manual": 57.7,
+      "Other": 62.55,
+      "Semi-Auto": 49.6
+    },
+    "global": 55.4
+  }
+}

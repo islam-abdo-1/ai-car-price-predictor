@@ -7,8 +7,8 @@ env/
 .pytest_cache/
 .coverage
 
-# Model artifacts
-model_artifacts/
+# Local model artifacts (keep backend/model_artifacts in git for deployment)
+/model_artifacts/
 
 # Environment variables
 .env

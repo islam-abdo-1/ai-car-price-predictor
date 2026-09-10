@@ -1,0 +1,24 @@
+{
+  "num_features": [
+    "mileage",
+    "tax",
+    "mpg",
+    "engineSize",
+    "car_age"
+  ],
+  "cat_features": [
+    "model",
+    "transmission",
+    "fuelType",
+    "Make"
+  ],
+  "svr_features": [
+    "car_age",
+    "mileage",
+    "tax",
+    "mpg",
+    "engineSize"
+  ],
+  "target": "price",
+  "target_currency": "GBP"
+}

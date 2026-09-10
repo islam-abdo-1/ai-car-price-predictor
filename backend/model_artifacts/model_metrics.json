@@ -1,0 +1,22 @@
+{
+  "Ridge Regression": {
+    "R2 Score": 0.8864,
+    "RMSE": 2606.5,
+    "MAE": 1944.18
+  },
+  "Random Forest": {
+    "R2 Score": 0.9079,
+    "RMSE": 2346.51,
+    "MAE": 1686.3
+  },
+  "Gradient Boosting": {
+    "R2 Score": 0.8927,
+    "RMSE": 2532.79,
+    "MAE": 1869.5
+  },
+  "SVR": {
+    "R2 Score": 0.8086,
+    "RMSE": 3383.16,
+    "MAE": 2482.92
+  }
+}
