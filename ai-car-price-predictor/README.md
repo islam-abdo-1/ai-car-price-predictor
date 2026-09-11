@@ -15,7 +15,7 @@ This application predicts vehicle market prices using trained ML regression mode
 
 **Live Demo:**
 - **Frontend:** https://ai-car-price-predictor.vercel.app
-- **Backend API:** https://ai-car-price-predictor-74bc575d.fastapicloud.dev
+- **Backend API:** https://ai-car-price-predictor-917bfa30.fastapicloud.dev
 
 ---
 
@@ -164,7 +164,7 @@ npm run preview
 
 Create `.env` in project root:
 ```env
-VITE_API_URL=https://ai-car-price-predictor-74bc575d.fastapicloud.dev
+VITE_API_URL=https://ai-car-price-predictor-917bfa30.fastapicloud.dev
 ```
 
 ---
