@@ -51,7 +51,7 @@ export function About() {
           <SectionCard key={detail.title} className="hover:border-accent/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-300">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10">
-                <detail.icon className={detail.icon === CarIcon ? 'w-6 h-6 text-white' : 'w-7 h-7 text-white'} aria-hidden="true" />
+                <detail.icon className={detail.icon === CarIcon ? 'w-7 h-7 text-amber-400' : 'w-7 h-7 text-white'} aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-h3 font-semibold text-text-primary mb-2">{detail.title}</h3>
