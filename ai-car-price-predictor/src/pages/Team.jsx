@@ -155,7 +155,7 @@ function TeamCard({ member, index }) {
     <div className="flip-card relative flex flex-col" style={{ animationDelay: `${index * 100}ms` }}>
       <div className={`flip-card-inner ${flipped ? 'flipped z-10' : ''}`} style={{ height: '100%' }}>
         
-        {/* Front Face: Avatar + Name + Assigned Roles Tags + Social Links + "Show Skills" */}
+        {/* Front Face: Avatar + Name + Assigned Roles Tags (top), Social Links + Button + Footer (bottom, pinned) */}
         <div className="flip-card-front section-card flex flex-col h-full">
           {renderAvatar()}
           
@@ -163,16 +163,17 @@ function TeamCard({ member, index }) {
           
           {renderAssignedRolesTags()}
           
-          {renderSocialLinks()}
-          
           <div className="flex-1" />
           
-          {renderFlipButton(() => setFlipped(true), ChevronRight, 'Show Skills')}
-          
-          {renderFooter()}
+          {/* Bottom section: Social Links + Show Skills Button + Footer - always aligned at bottom */}
+          <div className="flex flex-col items-center gap-3">
+            {renderSocialLinks()}
+            {renderFlipButton(() => setFlipped(true), ChevronRight, 'Show Skills')}
+            {renderFooter()}
+          </div>
         </div>
 
-        {/* Back Face: Avatar + Name + Skills List + "Hide Skills" */}
+        {/* Back Face: Avatar + Name + Skills List + "Hide Skills" + Footer (pinned at bottom) */}
         <div className="flip-card-back section-card flex flex-col h-full">
           {renderAvatar()}
           
@@ -180,9 +181,13 @@ function TeamCard({ member, index }) {
           
           {renderSkillsList()}
           
-          {renderFlipButton(() => setFlipped(false), ChevronLeft, 'Hide Skills')}
+          <div className="flex-1" />
           
-          {renderFooter()}
+          {/* Bottom section: Hide Skills Button + Footer - always aligned at bottom */}
+          <div className="flex flex-col items-center gap-3">
+            {renderFlipButton(() => setFlipped(false), ChevronLeft, 'Hide Skills')}
+            {renderFooter()}
+          </div>
         </div>
       </div>
     </div>
