@@ -6,6 +6,10 @@
   "devCommand": "npm run dev",
   "rewrites": [
     {
+      "source": "/api/:path*",
+      "destination": "https://ai-car-price-predictor-917bfa30.fastapicloud.dev/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

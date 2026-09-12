@@ -16,8 +16,7 @@ export async function checkApiHealth() {
   }
   
   try {
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-    const response = await fetch(`${apiUrl}/health`);
+    const response = await fetch('/api/health');
     return response.ok ? { status: 'ok', mode: 'real' } : { status: 'error', mode: 'real' };
   } catch {
     return { status: 'error', mode: 'real' };
