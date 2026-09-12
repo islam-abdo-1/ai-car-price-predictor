@@ -11,7 +11,9 @@ A sophisticated Machine Learning application for vehicle price prediction built 
 
 ## 🎯 Project Overview
 
-This application predicts vehicle market prices using trained ML regression models (Ridge, Random Forest, Gradient Boosting, SVR) based on vehicle specifications. Deployed with a modern React frontend on Vercel and FastAPI backend on FastAPI Cloud.
+This application predicts vehicle market prices using trained ML regression models (Ridge, Random Forest, Gradient Boosting, SVR) based on vehicle specifications. Deployed with a modern React frontend on **Vercel** and FastAPI backend on **FastAPI Cloud**.
+
+The frontend communicates with the backend through a **Vercel Edge Proxy** (`/api/*` → FastAPI Cloud), keeping the backend URL hidden from the client bundle.
 
 **Live Demo:**
 - **Frontend:** https://ai-car-price-predictor.vercel.app
@@ -55,7 +57,7 @@ This application predicts vehicle market prices using trained ML regression mode
 ### Deployment
 | Platform | Role |
 |----------|------|
-| Vercel | Frontend Hosting + SPA Rewrites |
+| Vercel | Frontend Hosting + SPA Rewrites + **API Proxy** (`/api/*` → FastAPI Cloud) |
 | FastAPI Cloud | Backend API Hosting |
 | GitHub Actions | CI/CD (planned) |
 
@@ -76,13 +78,17 @@ This application predicts vehicle market prices using trained ML regression mode
 
 ## 📡 API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/` | API info & links |
-| `GET` | `/health` | Health check |
-| `POST` | `/predict` | Price prediction |
-| `GET` | `/models/metrics` | Model evaluation metrics |
-| `GET` | `/models/info` | Models & features info |
+The frontend uses **relative paths** (`/api/*`) which are proxied by Vercel to the FastAPI backend:
+
+| Method | Frontend Path | Proxied To | Description |
+|--------|---------------|------------|-------------|
+| `GET` | `/api/` | `GET /` | API info & links |
+| `GET` | `/api/health` | `GET /health` | Health check |
+| `POST` | `/api/predict` | `POST /predict` | Price prediction |
+| `GET` | `/api/models/metrics` | `GET /models/metrics` | Model evaluation metrics |
+| `GET` | `/api/models/info` | `GET /models/info` | Models & features info |
+
+**Architecture Note:** The frontend calls relative paths (`/api/*`). Vercel Edge Network proxies these to the FastAPI backend (`https://ai-car-price-predictor-917bfa30.fastapicloud.dev`), keeping the backend URL out of the client bundle.
 
 **Request Example:**
 ```json
@@ -162,10 +168,22 @@ npm run preview
 
 ## ⚙️ Environment Variables
 
-Create `.env` in project root:
+Create `.env` in project root for local development:
 ```env
-VITE_API_URL=https://your-backend-api-url.com
+VITE_API_URL=http://localhost:8000
 ```
+
+**Production (Vercel):** No `VITE_API_URL` needed. The frontend uses relative paths (`/api/*`) which are proxied by Vercel via `vercel.json` rewrites:
+
+```json
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://ai-car-price-predictor-917bfa30.fastapicloud.dev/:path*" }
+  ]
+}
+```
+
+This keeps the backend URL **out of the client bundle** — not exposed in DevTools or the JS bundle.
 
 ---
 
