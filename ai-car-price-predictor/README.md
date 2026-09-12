@@ -164,7 +164,7 @@ npm run preview
 
 Create `.env` in project root:
 ```env
-VITE_API_URL=https://ai-car-price-predictor-917bfa30.fastapicloud.dev
+VITE_API_URL=https://your-backend-api-url.com
 ```
 
 ---
